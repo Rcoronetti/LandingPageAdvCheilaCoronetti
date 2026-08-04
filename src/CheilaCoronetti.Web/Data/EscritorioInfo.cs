@@ -15,4 +15,7 @@ public static class EscritorioInfo
 
     public static string LinkWhatsApp =>
         $"https://wa.me/{TelefoneWhatsApp}?text={Uri.EscapeDataString(WhatsAppMensagem)}";
+
+    public const string DesenvolvedorNome = "Rafael Coronetti";
+    public const string DesenvolvedorUrl = "https://github.com/Rcoronetti";
 }

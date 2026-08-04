@@ -33,8 +33,15 @@
     </div>
 
     <div class="footer-bottom">
-        <div class="container">
-            <p>© @DateTime.Now.Year Cheila Coronetti Advogada · OAB/SC [N.º OAB] · Todos os direitos reservados</p>
+        <div class="container footer-bottom-inner">
+            <p>© @DateTime.Now.Year Cheila Coronetti Advogada · OAB/SC 34383 · Todos os direitos reservados</p>
+            <p class="footer-credit">
+                <span class="credit-icon">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
+                </span>
+                Site desenvolvido por
+                <a class="credit-link" href="@EscritorioInfo.DesenvolvedorUrl" target="_blank" rel="noopener">@EscritorioInfo.DesenvolvedorNome</a>
+            </p>
         </div>
     </div>
 </footer>
