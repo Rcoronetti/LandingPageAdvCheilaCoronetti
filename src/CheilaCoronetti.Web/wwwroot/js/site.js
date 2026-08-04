@@ -32,13 +32,12 @@
     function initCarousel() {
         const root = document.querySelector('[data-carousel]');
         if (!root) return;
-        const track = root.querySelector('.carousel-track');
-        const slides = root.querySelectorAll('.carousel-slide');
+        const viewport = root.querySelector('.carousel-viewport');
+        const slides = Array.from(root.querySelectorAll('.carousel-slide'));
         const dotsWrap = root.querySelector('.carousel-dots');
-        if (!track || slides.length === 0) return;
+        if (!viewport || slides.length === 0) return;
 
         const total = slides.length;
-        const autoplayMs = parseInt(root.dataset.autoplay || '6000', 10);
         let index = 0;
         let timer = null;
 
@@ -48,42 +47,43 @@
             dot.className = 'carousel-dot';
             dot.type = 'button';
             dot.setAttribute('aria-label', 'Ver avaliação ' + (i + 1) + ' de ' + total);
-            dot.addEventListener('click', () => goTo(i, true));
+            dot.addEventListener('click', () => goTo(i));
             dotsWrap.appendChild(dot);
             dots.push(dot);
         }
 
-        function goTo(i, manual) {
-            index = (i + total) % total;
-            track.style.transform = 'translateX(-' + index * 100 + '%)';
+        function updateDots() {
             dots.forEach((d, j) => d.classList.toggle('active', j === index));
-            if (manual) restart();
         }
 
-        function next() { goTo(index + 1, true); }
-        function prev() { goTo(index - 1, true); }
+        function goTo(i) {
+            index = (i + total) % total;
+            viewport.scrollTo({ left: index * viewport.clientWidth, behavior: 'smooth' });
+            updateDots();
+        }
 
-        function start() { if (autoplayMs > 0 && !timer) timer = setInterval(next, autoplayMs); }
+        function next() { goTo(index + 1); }
+        function prev() { goTo(index - 1); }
+
+        function start() { if (!timer) timer = setInterval(next, 3000); }
         function stop() { if (timer) { clearInterval(timer); timer = null; } }
-        function restart() { stop(); start(); }
 
         const prevBtn = root.querySelector('[data-carousel-prev]');
         const nextBtn = root.querySelector('[data-carousel-next]');
         if (prevBtn) prevBtn.addEventListener('click', prev);
         if (nextBtn) nextBtn.addEventListener('click', next);
 
+        viewport.addEventListener('scroll', () => {
+            const i = Math.round(viewport.scrollLeft / viewport.clientWidth);
+            if (i !== index) { index = i; updateDots(); }
+        }, { passive: true });
+
         root.addEventListener('mouseenter', stop);
         root.addEventListener('mouseleave', start);
         root.addEventListener('touchstart', stop, { passive: true });
         root.addEventListener('touchend', start, { passive: true });
 
-        root.setAttribute('tabindex', '0');
-        root.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prev();
-            if (e.key === 'ArrowRight') next();
-        });
-
-        goTo(0, false);
+        updateDots();
         start();
     }
 
