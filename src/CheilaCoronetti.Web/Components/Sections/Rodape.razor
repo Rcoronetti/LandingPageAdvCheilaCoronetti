@@ -1,0 +1,40 @@
+﻿@using CheilaCoronetti.Web.Data
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <span class="brand-name">Cheila Coronetti</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="footer-social">
+                <a href="@EscritorioInfo.InstagramUrl" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+                </a>
+                <a href="@EscritorioInfo.FacebookUrl" target="_blank" rel="noopener" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+                </a>
+            </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Links do rodapé">
+            <h4>Navegação</h4>
+            <a href="#sobre">Sobre</a>
+            <a href="#areas">Áreas de atuação</a>
+            <a href="#metodo">Como trabalhamos</a>
+            <a href="#equipe">Equipe</a>
+            <a href="#avaliacoes">Avaliações</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="footer-contact">
+            <h4>Contato</h4>
+            <p>@EscritorioInfo.Endereco<br />@EscritorioInfo.Cidade</p>
+            <a href="tel:+5549999715330">@EscritorioInfo.TelefoneExibicao</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© @DateTime.Now.Year Cheila Coronetti Advogada · OAB/SC [N.º OAB] · Todos os direitos reservados</p>
+        </div>
+    </div>
+</footer>
