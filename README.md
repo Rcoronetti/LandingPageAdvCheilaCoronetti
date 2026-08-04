@@ -17,3 +17,7 @@ dotnet run --project src/CheilaCoronetti.Web
 | URL do domínio | App.razor (JSON-LD) | pendente |
 | Fotos reais (advogada e equipe) | wwwroot/img/ | pendente |
 | Imagem Open Graph | wwwroot/img/og-image.png | pendente |
+
+
+## Licença
+© 2026 Rafael Coronetti. Todos os direitos reservados. Proibida a reprodução sem autorização.
