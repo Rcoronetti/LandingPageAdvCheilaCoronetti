@@ -201,6 +201,27 @@ h3 {
 
 .brand {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .6rem;
+    line-height: 1.15;
+}
+
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.hero-logo {
+    width: clamp(140px, 22vw, 200px);
+    height: auto;
+    margin-bottom: 1.2rem;
+}
+
+.brand-text {
+    display: flex;
     flex-direction: column;
     line-height: 1.15;
 }
@@ -712,6 +733,22 @@ h3 {
         background: var(--gold);
         transform: scale(1.25);
     }
+
+.review-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    background: var(--navy);
+    color: var(--gold);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.3rem;
+    border: 2px solid var(--gold);
+}
 
 /* ===== Contato ===== */
 .contact-grid {

@@ -1,0 +1,56 @@
+﻿@using CheilaCoronetti.Web.Data
+
+<section class="section" id="avaliacoes">
+    <div class="container">
+        <SectionHeader Eyebrow="Avaliações"
+                       Title="O que nossos clientes dizem"
+                       Subtitle="Avaliações publicadas no perfil do Google do escritório." />
+
+        <div class="carousel" data-carousel data-autoplay="6000" aria-roledescription="carrossel" aria-label="Avaliações de clientes">
+            <div class="carousel-track">
+                @foreach (var avaliacao in AvaliacoesRepository.Todas)
+                {
+                    <article class="carousel-slide">
+                        <div class="review">
+                            @if (!string.IsNullOrWhiteSpace(avaliacao.Foto))
+                            {
+                                <img class="review-avatar" src="@avaliacao.Foto" alt="Foto de @avaliacao.Nome" />
+                            }
+                            else
+                            {
+                                <span class="review-avatar" aria-hidden="true">@Iniciais(avaliacao.Nome)</span>
+                            }
+                            <span class="review-stars" aria-label="@avaliacao.Estrelas de 5 estrelas">
+                                @Estrelas(avaliacao.Estrelas)
+                            </span>
+                            <p>“@avaliacao.Texto”</p>
+                            <footer>
+                                <strong>@avaliacao.Nome</strong>
+                                <span class="review-source">Avaliação no Google</span>
+                            </footer>
+                        </div>
+                    </article>
+                }
+            </div>
+
+            <div class="carousel-nav">
+                <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Avaliação anterior">‹</button>
+                <div class="carousel-dots" role="tablist" aria-label="Selecionar avaliação"></div>
+                <button class="carousel-arrow" type="button" data-carousel-next aria-label="Próxima avaliação">›</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    private static string Estrelas(int n)
+    {
+        return new string('★', n) + new string('☆', 5 - n);
+    }
+
+    private static string Iniciais(string nome)
+    {
+        var partes = nome.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        return string.Concat(partes.Take(2).Select(p => p[0].ToString().ToUpperInvariant()));
+    }
+}

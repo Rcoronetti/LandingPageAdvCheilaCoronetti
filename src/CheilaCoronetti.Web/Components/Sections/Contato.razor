@@ -1,0 +1,64 @@
+﻿@using CheilaCoronetti.Web.Data
+
+<section class="section section-alt" id="contato">
+    <div class="container">
+        <SectionHeader Eyebrow="Contato"
+                       Title="Fale com a Dra. Cheila"
+                       Subtitle="Atendimento humanizado para orientar você sobre o seu caso." />
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <a class="contact-card" href="https://maps.google.com/?q=R.+Mal.+Floriano+Peixoto,+199+-+Ponte+Serrada+-+SC" target="_blank" rel="noopener">
+                    <span class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                    </span>
+                    <div>
+                        <h3>Endereço</h3>
+                        <p>@EscritorioInfo.Endereco<br />@EscritorioInfo.Cidade</p>
+                    </div>
+                </a>
+
+                <a class="contact-card" href="tel:+5549999715330">
+                    <span class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                    </span>
+                    <div>
+                        <h3>Telefone</h3>
+                        <p>@EscritorioInfo.TelefoneExibicao</p>
+                    </div>
+                </a>
+
+                <a class="contact-card" href="@EscritorioInfo.LinkWhatsApp" target="_blank" rel="noopener">
+                    <span class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-5.8-5.1c-.5-.7-.9-1.6-.9-2.6 0-1 .5-1.9 1.3-2.4.3-.2.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.5.9 1.1 1.6 2 2.2.2.2.4.2.6 0l.7-.8c.2-.2.4-.3.6-.2l2 .9c.2.1.4.2.4.4v.7Z" /></svg>
+                    </span>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>Atendimento rápido pelo WhatsApp</p>
+                    </div>
+                </a>
+
+                <div class="contact-card">
+                    <span class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    </span>
+                    <div>
+                        <h3>Horário de atendimento</h3>
+                        <p>[INSERIR_HORARIO] · Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+
+                <div class="social-row">
+                    <a class="social-link" href="@EscritorioInfo.InstagramUrl" target="_blank" rel="noopener">Instagram</a>
+                    <a class="social-link" href="@EscritorioInfo.FacebookUrl" target="_blank" rel="noopener">Facebook</a>
+                </div>
+            </div>
+
+            <div class="contact-map" data-reveal>
+                <iframe title="Mapa do escritório"
+                        src="https://maps.google.com/maps?q=Rua%20Mal.%20Floriano%20Peixoto%20199%2C%20Ponte%20Serrada%20SC&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
