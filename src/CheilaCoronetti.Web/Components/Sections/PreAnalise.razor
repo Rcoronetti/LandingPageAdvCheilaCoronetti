@@ -1,0 +1,108 @@
+﻿@using CheilaCoronetti.Web.Data
+
+<section class="section section-alt" id="pre-analise">
+    <div class="container">
+        <SectionHeader Eyebrow="Pré-análise gratuita"
+                       Title="Não sabe se tem direito? A gente analisa pra você"
+                       Subtitle="Conte seu caso em 3 passos rápidos. Nossa equipe responde no WhatsApp." />
+
+        <div class="preanalise" data-preanalise data-whatsapp="@EscritorioInfo.TelefoneWhatsApp">
+            <form data-form>
+                <!-- Passo 1 -->
+                <div class="preanalise-step active" data-step="1">
+                    <h3>Passo 1 de 3 — Quem é você</h3>
+                    <label class="field">
+                        <span>Seu nome</span>
+                        <input type="text" name="nome" placeholder="Nome completo" />
+                    </label>
+                    <label class="field">
+                        <span>WhatsApp</span>
+                        <input type="tel" name="whatsapp" placeholder="(49) 99999-9999" />
+                    </label>
+                    <label class="field">
+                        <span>Cidade / UF</span>
+                        <input type="text" name="cidade" placeholder="Ponte Serrada - SC" />
+                    </label>
+                    <label class="field">
+                        <span>Idade</span>
+                        <input type="number" name="idade" placeholder="Ex.: 55" />
+                    </label>
+                    <div class="preanalise-actions">
+                        <button type="button" class="btn btn-primary" data-next>Continuar</button>
+                    </div>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="preanalise-step" data-step="2">
+                    <h3>Passo 2 de 3 — Sua situação INSS</h3>
+                    <label class="field">
+                        <span>Qual benefício você procura?</span>
+                        <select name="beneficio">
+                            <option value="">Selecione...</option>
+                            <option>Aposentadoria</option>
+                            <option>Pensão por morte</option>
+                            <option>Auxílio-doença / Incapacidade</option>
+                            <option>BPC / LOAS</option>
+                            <option>Revisão de benefício</option>
+                            <option>Outro</option>
+                        </select>
+                    </label>
+                    <div class="field">
+                        <span>Já deu entrada no INSS?</span>
+                        <div class="preanalise-options">
+                            <label><input type="radio" name="entrada" value="Sim" /> Sim</label>
+                            <label><input type="radio" name="entrada" value="Não" /> Não</label>
+                            <label><input type="radio" name="entrada" value="Ainda aguardo" /> Ainda aguardo</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <span>Foi negado?</span>
+                        <div class="preanalise-options">
+                            <label><input type="radio" name="negado" value="Sim" /> Sim</label>
+                            <label><input type="radio" name="negado" value="Não" /> Não</label>
+                        </div>
+                    </div>
+                    <div class="preanalise-actions">
+                        <button type="button" class="btn btn-ghost" data-prev>Voltar</button>
+                        <button type="button" class="btn btn-primary" data-next>Continuar</button>
+                    </div>
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="preanalise-step" data-step="3">
+                    <h3>Passo 3 de 3 — Seu caso</h3>
+                    <label class="field">
+                        <span>Número do protocolo (opcional)</span>
+                        <input type="text" name="protocolo" placeholder="Se tiver, informe" />
+                    </label>
+                    <label class="field">
+                        <span>Conte com suas palavras o que aconteceu</span>
+                        <textarea name="relato" rows="5"
+                                  placeholder="Ex.: fui cortada na aposentadoria, não recebi e não entendi o motivo."></textarea>
+                    </label>
+                    <div class="preanalise-actions">
+                        <button type="button" class="btn btn-ghost" data-prev>Voltar</button>
+                        <button type="submit" class="btn btn-primary">Enviar e falar no WhatsApp</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="preanalise-info">
+                <div class="preanalise-info-item">
+                    <span class="preanalise-info-icon">⚡</span>
+                    <div>
+                        <strong>3 passos rápidos</strong>
+                        <p>Se você não tiver alguma informação em mãos, pode deixar em branco — a gente pergunta depois.</p>
+                    </div>
+                </div>
+                <div class="preanalise-info-item">
+                    <span class="preanalise-info-icon">🔒</span>
+                    <div>
+                        <strong>Sigilo e sem compromisso</strong>
+                        <p>Usamos suas informações apenas para analisar o caso. A primeira conversa é gratuita e os honorários são combinados por escrito antes de começar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -87,6 +87,46 @@
         start();
     }
 
+    function initPreAnalise() {
+        const root = document.querySelector('[data-preanalise]');
+        if (!root) return;
+        const steps = Array.from(root.querySelectorAll('[data-step]'));
+        const form = root.querySelector('form');
+        if (steps.length === 0 || !form) return;
+        const whatsapp = root.dataset.whatsapp || '5549999715330';
+        let current = 0;
+
+        function show(i) {
+            current = Math.max(0, Math.min(steps.length - 1, i));
+            steps.forEach((s, j) => s.classList.toggle('active', j === current));
+        }
+
+        root.querySelectorAll('[data-next]').forEach((b) => b.addEventListener('click', () => show(current + 1)));
+        root.querySelectorAll('[data-prev]').forEach((b) => b.addEventListener('click', () => show(current - 1)));
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fd = new FormData(form);
+            const msg =
+                'PRÉ-ANÁLISE GRATUITA\n' +
+                '— Dados —\n' +
+                'Nome: ' + (fd.get('nome') || '-') + '\n' +
+                'WhatsApp: ' + (fd.get('whatsapp') || '-') + '\n' +
+                'Cidade/UF: ' + (fd.get('cidade') || '-') + '\n' +
+                'Idade: ' + (fd.get('idade') || '-') + '\n' +
+                '— Situação INSS —\n' +
+                'Benefício que procura: ' + (fd.get('beneficio') || '-') + '\n' +
+                'Já deu entrada no INSS? ' + (fd.get('entrada') || '-') + '\n' +
+                'Foi negado? ' + (fd.get('negado') || '-') + '\n' +
+                '— O caso —\n' +
+                'Protocolo: ' + (fd.get('protocolo') || '-') + '\n' +
+                'Relato: ' + (fd.get('relato') || '-');
+            window.open('https://wa.me/' + whatsapp + '?text=' + encodeURIComponent(msg), '_blank');
+        });
+
+        show(0);
+    }
+
     function initReveal() {
         const els = document.querySelectorAll('[data-reveal]');
         if (els.length === 0) return;
@@ -113,5 +153,6 @@
         initNav();
         initCarousel();
         initReveal();
+        initPreAnalise();
     });
 })();
