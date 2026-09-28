@@ -556,55 +556,18 @@ h3 {
 
 .equipe-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.15fr .95fr .55fr;
     gap: 2.5rem;
     align-items: center;
 }
 
-.equipe-media {
-    position: relative;
-}
-
-.equipe-video {
-    position: relative;
+.equipe-foto img {
+    width: 100%;
+    height: auto;
+    display: block;
     border-radius: var(--radius);
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
     box-shadow: var(--shadow-sm);
 }
-
-    .equipe-video img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-.equipe-play {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    background: rgba(18, 38, 58, .35);
-    color: #fff;
-    transition: background .25s ease;
-}
-
-    .equipe-play svg {
-        background: var(--gold);
-        border-radius: 50%;
-        padding: 12px;
-        box-sizing: content-box;
-        transition: transform .25s ease;
-    }
-
-    .equipe-play:hover {
-        background: rgba(18, 38, 58, .5);
-    }
-
-        .equipe-play:hover svg {
-            transform: scale(1.1);
-        }
 
 .equipe-text h3 {
     margin-bottom: 1rem;
@@ -615,24 +578,37 @@ h3 {
     margin-bottom: 1rem;
 }
 
-.equipe-cta {
-    margin-bottom: 1.5rem;
-}
-
-.equipe-foto {
+.equipe-video {
     border-radius: var(--radius);
     overflow: hidden;
-    margin-bottom: 1rem;
-    aspect-ratio: 4 / 3;
     box-shadow: var(--shadow-sm);
 }
 
-    .equipe-foto img {
+    .equipe-video video {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
         display: block;
     }
+
+/* Tablet: foto + texto em cima, vídeo centralizado abaixo */
+@media (max-width: 900px) {
+    .equipe-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .equipe-video {
+        grid-column: 1 / -1;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile: tudo empilhado */
+@media (max-width: 640px) {
+    .equipe-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 
 .btn {

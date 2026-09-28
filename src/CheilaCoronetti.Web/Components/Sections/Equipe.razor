@@ -5,34 +5,29 @@
                        Subtitle="Conheça o time que acompanha o seu processo em cada etapa." />
 
         <div class="equipe-grid">
-            <div class="equipe-media" data-reveal>
-                <div class="equipe-foto">
-                    <img src="img/equipe-foto.jpg"
-                         alt="Equipe do escritório Cheila Coronetti" loading="lazy" />
-                </div>
-                <div class="equipe-video">
-                    <img src="img/equipe-capa.jpg"
-                         alt="Vídeo de apresentação da equipe" loading="lazy" />
-                    <a class="equipe-play" href="[LINK_DO_VIDEO]" target="_blank" rel="noopener"
-                       aria-label="Assistir ao vídeo de apresentação da equipe">
-                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
-                            <path d="M8 5v14l11-7z" />
-                        </svg>
-                    </a>
-                </div>
+            <div class="equipe-foto" data-reveal>
+                <img src="img/equipe-foto.jpg"
+                     alt="Equipe do escritório Cheila Coronetti" loading="lazy" />
             </div>
 
             <div class="equipe-text" data-reveal>
-                <p class="eyebrow">Nosso time</p>
                 <h3>Você não está sozinho no seu processo</h3>
                 <p>
                     Além da Dra. Cheila Coronetti, o escritório conta com uma equipe que acompanha os prazos,
                     organiza a documentação e responde suas mensagens.
                 </p>
                 <p class="equipe-cta">
-                    <strong>Dê play</strong> para conhecer quem vai te atender.
+                    <strong>Dê play</strong> no vídeo para conhecer quem vai te atender.
                 </p>
                 <WhatsAppButton Label="Fazer minha pré-análise" />
+            </div>
+
+            <div class="equipe-video" data-reveal>
+                <video controls preload="metadata" poster="img/equipe-capa.jpg">
+                    <source src="img/equipe-video-v3.mp4" type="video/mp4" />
+                    Seu navegador não suporta vídeo.
+                    <a href="img/equipe-video-v3.mp4">Baixe o vídeo aqui</a>.
+                </video>
             </div>
         </div>
     </div>

@@ -25,6 +25,18 @@ public static class AreasAtuacaoData
         new("Benefícios rurais",
             "Aposentadorias, pensões e auxílios para trabalhadores rurais, com comprovação da atividade por documentos e testemunhas."),
         new("Recursos administrativos",
-            "Recursos junto ao INSS e ao CRPS para reverter indeferimentos, com estratégia definida caso a caso.")
+            "Recursos junto ao INSS e ao CRPS para reverter indeferimentos, com estratégia definida caso a caso."),
+        new("BPC/LOAS",
+            "Benefício assistencial a idosos e pessoas com deficiência em situação de vulnerabilidade, sem exigência de contribuição prévia."),
+        new("Planejamento previdenciário",
+            "Simulação e orientação sobre a estratégia mais vantajosa para requerer a aposentadoria, evitando perda de direitos."),
+        new("Restabelecimento de benefício",
+            "Reativação de auxílio-doença ou outro benefício cessado ou suspenso indevidamente pelo INSS."),
+        new("Tempo especial e rural",
+            "Reconhecimento de períodos de atividade especial ou rural não computados pelo INSS, por via administrativa ou judicial."),
+        new("Isenção de Imposto de Renda",
+            "Isenção de IR sobre proventos de aposentados e pensionistas portadores de doença grave prevista em lei."),
+        new("Certidão de tempo de contribuição (CTC)",
+            "Emissão de certidão para averbação de tempo em outro regime previdenciário, como o RPPS.")
     };
 }
