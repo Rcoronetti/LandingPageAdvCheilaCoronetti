@@ -36,14 +36,9 @@ para o VPS via SSH/SCP e reinicia o serviço do site.
 ## Pendências antes do lançamento
 | Item | Onde | Status |
 | --- | --- | --- |
-| Avaliações reais do Google | Data/AvaliacoesRepository.cs | pendente |
-| Bios da equipe (substituir Lorem ipsum) | Data/Equipe.cs | pendente |
-| N.º OAB | Rodape.razor / Equipe.cs | pendente |
-| Horário de atendimento | Contato.razor | pendente |
-| URL do domínio | App.razor (JSON-LD) | pendente |
-| Fotos reais (advogada e equipe) | wwwroot/img/ | pendente |
+| URL do domínio | App.razor (JSON-LD) | pendente — aguardando DNS |
 | Imagem Open Graph | wwwroot/img/og-image.png | pendente |
-| DNS do domínio + HTTPS | Registro.br / Caddyfile | aguardando boleto |
+| Favicon (ícone na aba do navegador) | wwwroot/ | em ajuste — logo definido |
 
 ## Licença
 © 2026 Rafael Coronetti. Todos os direitos reservados. Proibida a reprodução sem autorização.
