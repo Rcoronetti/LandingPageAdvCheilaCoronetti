@@ -17,10 +17,10 @@ para o VPS via SSH/SCP e reinicia o serviço do site.
 | --- | --- |
 | Hospedagem | VPS Locaweb — Ubuntu 24.04 LTS (vps71616.publiccloud.com.br) |
 | Runtime | ASP.NET Core 10.0 |
-| Proxy reverso | Caddy (porta 80 → localhost:5000) |
+| Proxy reverso | Caddy (HTTPS automático → localhost:5000) |
 | Serviço | systemd `cheila.service` — arquivos em `/var/www/cheila` |
-| Endereço atual | http://177.153.67.175 |
-| Domínio | cheilacoronetti.adv.br (Registro.br — aguardando compensação do boleto) |
+| Endereço oficial | https://cheilacoronetti.adv.br |
+| Domínio | cheilacoronetti.adv.br — ativo (Registro.br, DNS + HTTPS configurados) |
 
 **Secrets necessários** (Settings → Secrets and variables → Actions):
 
@@ -32,13 +32,6 @@ para o VPS via SSH/SCP e reinicia o serviço do site.
 
 > Documentação completa de infraestrutura, manutenção e disaster recovery:
 > documento "Site Cheila Coronetti — Documentação de Infraestrutura e Manutenção" (set/2026).
-
-## Pendências antes do lançamento
-| Item | Onde | Status |
-| --- | --- | --- |
-| URL do domínio | App.razor (JSON-LD) | pendente — aguardando DNS |
-| Imagem Open Graph | wwwroot/img/og-image.png | pendente |
-| Favicon (ícone na aba do navegador) | wwwroot/ | em ajuste — logo definido |
 
 ## Licença
 © 2026 Rafael Coronetti. Todos os direitos reservados. Proibida a reprodução sem autorização.
